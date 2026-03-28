@@ -1,0 +1,82 @@
+title: DistTopic
+description: >-
+  Open source tools for game development — building cross-platform editors
+  and servers for the Tibia community.
+url: "https://disttopic.github.io"
+baseurl: ""
+
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+
+color_scheme: disttopic-dark
+
+# Logos
+logo: "/assets/images/logo.svg"
+
+# Aux links (top-right)
+aux_links:
+  GitHub: "https://github.com/DistTopic"
+aux_links_new_tab: true
+
+# Navigation
+nav_sort: case_insensitive
+nav_enabled: true
+nav_external_links:
+  - title: Assets And Map Editor
+    url: https://github.com/DistTopic/assets-and-map-editor
+
+# Heading anchor links
+heading_anchors: true
+
+# Search
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# "Edit this page" on every page
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/DistTopic/disttopic.github.io"
+gh_edit_branch: "main"
+gh_edit_source: "/"
+gh_edit_view_mode: "edit"
+
+# Footer
+footer_content: >-
+  &copy; 2026 DistTopic &mdash; Licensed under
+  <a href="https://github.com/DistTopic/disttopic.github.io/blob/main/LICENSE">MIT</a>.
+  Built with <a href="https://just-the-docs.com">Just the Docs</a>.
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - .github/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - SECURITY.md
+  - vendor/
+  - node_modules/
+  - "*.py"

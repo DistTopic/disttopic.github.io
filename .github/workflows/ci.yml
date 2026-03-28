@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build Jekyll
+        run: bundle exec jekyll build --baseurl ""
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check for broken internal links
+        run: |
+          echo "Checking for broken internal links..."
+          ERRORS=0
+          for link in $(grep -roh 'href="/[^"]*"' _site/ --include="*.html" | sed 's/href="//;s/"$//' | sort -u); do
+            CLEAN_LINK=$(echo "$link" | sed 's/#.*//' | sed 's|/$||')
+            if [ -z "$CLEAN_LINK" ]; then continue; fi
+            if [ ! -f "_site${CLEAN_LINK}.html" ] && [ ! -f "_site${CLEAN_LINK}/index.html" ] && [ ! -f "_site${CLEAN_LINK}" ]; then
+              echo "::warning::Broken link: $link"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+          if [ "$ERRORS" -gt 0 ]; then
+            echo "::warning::Found $ERRORS potentially broken internal links"
+          else
+            echo "All internal links valid."
+          fi
+
+      - name: Validate HTML structure
+        run: |
+          echo "Checking generated HTML files..."
+          HTML_COUNT=$(find _site -name "*.html" | wc -l)
+          echo "Generated $HTML_COUNT HTML files"
+          if [ "$HTML_COUNT" -eq 0 ]; then
+            echo "::error::No HTML files generated — build may have failed silently"
+            exit 1
+          fi

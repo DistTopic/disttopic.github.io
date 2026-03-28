@@ -1,0 +1,30 @@
+<!-- Security: Content Security Policy -->
+<meta http-equiv="Content-Security-Policy"
+  content="default-src 'none';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' https://img.shields.io https://avatars.githubusercontent.com data:;
+    font-src 'self';
+    connect-src 'self';
+    frame-src 'none';
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'none';
+    object-src 'none';
+    manifest-src 'self';">
+
+<!-- Security: Prevent clickjacking -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+
+<!-- Security: Prevent MIME type sniffing -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<!-- Security: Referrer policy -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Security: Permissions policy -->
+<meta http-equiv="Permissions-Policy"
+  content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()">
+
+<!-- Favicon -->
+<link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
