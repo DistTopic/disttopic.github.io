@@ -5,7 +5,7 @@ description: >-
 url: "https://disttopic.github.io"
 baseurl: ""
 
-remote_theme: just-the-docs/just-the-docs@v0.10.0
+theme: just-the-docs
 
 color_scheme: disttopic-dark
 
