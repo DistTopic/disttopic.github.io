@@ -490,6 +490,35 @@ code, pre, kbd, samp,
   color: var(--gh-blue) !important;
 }
 
+/* ── Language selector ────────────────────────────────────────── */
+/* Material uses --md-primary-bg-color for header icons, which in our
+   custom palette equals the header background → invisible. Force fg. */
+.md-header__button,
+.md-header__option .md-header__button {
+  color: var(--gh-fg-muted) !important;
+}
+
+.md-header__button:hover {
+  color: var(--gh-fg) !important;
+}
+
+/* Language picker dropdown */
+.md-select__inner {
+  background-color: var(--gh-canvas-subtle) !important;
+  border: 1px solid var(--gh-border) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important;
+}
+
+.md-select__link {
+  color: var(--gh-fg-muted) !important;
+}
+
+.md-select__link:hover,
+.md-select__link--active {
+  color: var(--gh-blue) !important;
+  background-color: var(--gh-blue-muted) !important;
+}
+
 /* ── Scrollbar ────────────────────────────────────────────────── */
 * {
   scrollbar-width: thin;

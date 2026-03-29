@@ -1,0 +1,193 @@
+/* ── DistTopic custom light theme ────────────────────────────── */
+
+/* Language selector button — garante visibilidade no header claro */
+.md-header__button {
+  color: rgba(255,255,255,0.87) !important;
+}
+.md-header__button:hover {
+  color: #fff !important;
+}
+
+/* Dropdown do seletor de idioma */
+.md-select__inner {
+  background-color: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+}
+.md-select__link {
+  color: #37474f !important;
+}
+.md-select__link:hover,
+.md-select__link--active {
+  color: #3f51b5 !important;
+  background-color: rgba(63,81,181,0.08) !important;
+}
+
+/* ── Gallery grid ─────────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.gallery-item {
+  /* button reset */
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  width: 100%;
+  /* card */
+  display: block;
+  text-decoration: none !important;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  background: #0d1117;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow .2s ease, transform .2s ease;
+  color: inherit !important;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16);
+  transform: translateY(-3px);
+}
+
+.gallery-item figure {
+  margin: 0;
+}
+
+.gallery-thumb {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .35s ease;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-item figcaption {
+  padding: .75rem 1rem .85rem;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.gallery-item figcaption strong {
+  display: block;
+  color: #263238;
+  font-size: .875rem;
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+
+.gallery-item figcaption span {
+  color: #546e7a;
+  font-size: .78rem;
+  line-height: 1.45;
+  display: block;
+}
+
+/* ── Lightbox dialog ─────────────────────────────────────────── */
+#gallery-lightbox {
+  border: none;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+}
+
+#gallery-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.88);
+  cursor: zoom-out;
+}
+
+.lb-wrap {
+  position: relative;
+}
+
+.lb-close {
+  position: absolute;
+  top: -2.25rem;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.lb-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.lb-img {
+  display: block;
+  max-width: min(90vw, 960px);
+  max-height: 88vh;
+  border-radius: 8px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+  cursor: default;
+}
+
+/* ── Tables ──────────────────────────────────────────────────── */
+.md-typeset__table {
+  width: 100%;
+  min-width: 100%;
+}
+
+.md-typeset__table table {
+  display: table !important;
+  width: 100% !important;
+}
+
+.md-typeset table {
+  display: table !important;
+  width: 100% !important;
+}
+
+.md-typeset table th {
+  text-align: center !important;
+  white-space: nowrap;
+}
+
+.md-typeset table td {
+  text-align: center !important;
+}
+
+.md-typeset table th:first-child,
+.md-typeset table td:first-child {
+  text-align: left !important;
+}
+
+/* Scrollbar fina */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdbd transparent;
+}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background-color: #bdbdbd; border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
