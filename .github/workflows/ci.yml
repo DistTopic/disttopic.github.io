@@ -14,41 +14,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
+          python-version: "3.12"
+          cache: pip
 
-      - name: Build Jekyll
-        run: bundle exec jekyll build --baseurl ""
-        env:
-          JEKYLL_ENV: production
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Check for broken internal links
+      - name: Build MkDocs (strict)
+        run: mkdocs build --strict
+
+      - name: Validate output
         run: |
-          echo "Checking for broken internal links..."
-          ERRORS=0
-          for link in $(grep -roh 'href="/[^"]*"' _site/ --include="*.html" | sed 's/href="//;s/"$//' | sort -u); do
-            CLEAN_LINK=$(echo "$link" | sed 's/#.*//' | sed 's|/$||')
-            if [ -z "$CLEAN_LINK" ]; then continue; fi
-            if [ ! -f "_site${CLEAN_LINK}.html" ] && [ ! -f "_site${CLEAN_LINK}/index.html" ] && [ ! -f "_site${CLEAN_LINK}" ]; then
-              echo "::warning::Broken link: $link"
-              ERRORS=$((ERRORS + 1))
-            fi
-          done
-          if [ "$ERRORS" -gt 0 ]; then
-            echo "::warning::Found $ERRORS potentially broken internal links"
-          else
-            echo "All internal links valid."
-          fi
-
-      - name: Validate HTML structure
-        run: |
-          echo "Checking generated HTML files..."
-          HTML_COUNT=$(find _site -name "*.html" | wc -l)
+          HTML_COUNT=$(find site -name "*.html" | wc -l)
           echo "Generated $HTML_COUNT HTML files"
           if [ "$HTML_COUNT" -eq 0 ]; then
-            echo "::error::No HTML files generated — build may have failed silently"
+            echo "::error::No HTML files generated"
             exit 1
           fi
