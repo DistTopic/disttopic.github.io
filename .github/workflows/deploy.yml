@@ -24,33 +24,22 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
+          python-version: "3.12"
+          cache: pip
 
-      - name: Build Jekyll
-        run: bundle exec jekyll build --baseurl ""
-        env:
-          JEKYLL_ENV: production
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Verify no inline scripts in output
-        run: |
-          echo "Checking for inline script injection in generated HTML..."
-          FOUND=$(grep -rn '<script[^>]*>[^<]' _site/ --include="*.html" \
-            | grep -v 'src=' \
-            | grep -v 'jtd.onReady' \
-            | grep -v 'initSearch' \
-            | grep -v '"baseurl"' \
-            || true)
-          if [ -n "$FOUND" ]; then
-            echo "::warning::Unexpected inline scripts detected in generated HTML:"
-            echo "$FOUND"
-          fi
+      - name: Build MkDocs
+        run: mkdocs build --strict
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
 
   deploy:
     environment:
