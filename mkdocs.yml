@@ -1,7 +1,7 @@
 site_name: DistTopic
 site_description: >-
-  Open source tools for game development — building cross-platform editors
-  and servers for the Tibia community.
+  Ferramentas open source para desenvolvimento de jogos — editores cross-platform
+  e servidores para a comunidade Tibia.
 site_url: https://disttopic.github.io
 
 repo_url: https://github.com/DistTopic/disttopic.github.io
@@ -13,20 +13,20 @@ theme:
   custom_dir: overrides
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.svg
-  language: en
+  language: pt-BR
 
   palette:
-    - scheme: slate
-      primary: custom
-      accent: custom
+    - scheme: default
+      primary: indigo
+      accent: indigo
 
-  font: false  # Use system fonts — no Google Fonts (keeps CSP strict)
+  font: false  # Usa system fonts — sem Google Fonts (mantém CSP estrita)
 
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.indexes
+    - navigation.expand
     - navigation.top
     - search.highlight
     - search.suggest
@@ -37,9 +37,64 @@ theme:
 plugins:
   - search:
       separator: '[\s\-\._]+'
+      lang:
+        - pt
+        - en
+        - es
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: pt-BR
+          name: Português (BR)
+          build: true
+          default: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            Início: Home
+            Projetos: Projects
+            Documentação: Documentation
+            Visão Geral: Overview
+            Funcionalidades: Features
+            Sprites e Animações: Sprites & Animations
+            Itens e OTB: Items & OTB
+            Mapas OTBM: OTBM Maps
+            Interface: Interface
+            Versões Compatíveis: Compatible Versions
+            Requisitos de Sistema: System Requirements
+            Em Desenvolvimento: Work in Progress
+            Galeria: Gallery
+            Guias: Guides
+            Sobre: About
+        - locale: es
+          name: Español
+          build: true
+          nav_translations:
+            Início: Inicio
+            Projetos: Proyectos
+            Documentação: Documentación
+            Visão Geral: Descripción General
+            Funcionalidades: Características
+            Sprites e Animações: Sprites y Animaciones
+            Itens e OTB: Ítems y OTB
+            Mapas OTBM: Mapas OTBM
+            Interface: Interfaz
+            Versões Compatíveis: Versiones Compatibles
+            Requisitos de Sistema: Requisitos del Sistema
+            Em Desenvolvimento: En Desarrollo
+            Galeria: Galería
+            Guias: Guías
+            Sobre: Acerca de
 
 extra_css:
-  - assets/css/github-dark.css
+  - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/lightbox.js
 
 markdown_extensions:
   - admonition
@@ -62,23 +117,37 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - Home: index.md
-  - Projects:
+  - Início: index.md
+  - Projetos:
       - projects/index.md
-      - Assets And Map Editor: projects/assets-and-map-editor.md
-  - Guides:
+      - Assets And Map Editor:
+          - Visão Geral: projects/assets-and-map-editor/index.md
+          - Funcionalidades:
+              - projects/assets-and-map-editor/features.md
+              - Sprites e Animações: projects/assets-and-map-editor/features-sprites.md
+              - Itens e OTB: projects/assets-and-map-editor/features-items.md
+              - Mapas OTBM: projects/assets-and-map-editor/features-maps.md
+              - Interface: projects/assets-and-map-editor/features-interface.md
+          - Versões Compatíveis: projects/assets-and-map-editor/formats.md
+          - Requisitos de Sistema: projects/assets-and-map-editor/requirements.md
+          - Em Desenvolvimento: projects/assets-and-map-editor/wip.md
+          - Galeria: projects/assets-and-map-editor/gallery.md
+  - Guias:
       - guides/index.md
-      - Adding & Editing Pages: guides/adding-pages.md
-      - Security Practices: guides/security.md
-  - About: about.md
+      - Adicionando Páginas: guides/adding-pages.md
+      - Segurança: guides/security.md
+  - Sobre: about.md
 
 extra:
   social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/NrzbcBhh66
+      name: DistTopic no Discord
     - icon: fontawesome/brands/github
       link: https://github.com/DistTopic
-      name: DistTopic on GitHub
+      name: DistTopic no GitHub
   generator: false
 
 copyright: >-
   &copy; 2026 DistTopic &mdash;
-  <a href="https://github.com/DistTopic/disttopic.github.io/blob/main/LICENSE">MIT License</a>
+  <a href="https://github.com/DistTopic/disttopic.github.io/blob/main/LICENSE">Licença MIT</a>

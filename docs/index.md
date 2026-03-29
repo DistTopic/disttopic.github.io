@@ -52,7 +52,7 @@ A cross-platform visual editor for Tibia game assets — sprites, items, and out
 Built with **.NET 10** and **Avalonia UI 11**, it runs natively on 6 platforms with self-contained single-file executables.
 
 [Download](https://github.com/DistTopic/assets-and-map-editor/releases/latest){ .md-button .md-button--primary }
-[Documentation](projects/assets-and-map-editor.md){ .md-button }
+[Documentation](projects/assets-and-map-editor/index.md){ .md-button }
 
 ---
 
