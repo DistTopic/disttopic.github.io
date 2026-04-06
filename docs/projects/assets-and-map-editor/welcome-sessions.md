@@ -2,7 +2,6 @@
 
 Escolha rapidamente o que fazer ao abrir o editor — continue de onde parou ou comece do zero.
 
-<!-- TODO: capturar screenshot da tela de boas-vindas mostrando o histórico de sessões na lateral direita -->
 ![Tela de boas-vindas com histórico de sessões](/assets/images/screenshots/v2-welcome-window.png)
 
 ---
@@ -11,7 +10,6 @@ Escolha rapidamente o que fazer ao abrir o editor — continue de onde parou ou 
 
 Ao iniciar o editor, a tela de boas-vindas apresenta duas opções:
 
-<!-- TODO: capturar screenshot mostrando os botões "Restore Last Session" e "Open Files" na lateral esquerda -->
 ![Opções da tela inicial](/assets/images/screenshots/v2-welcome-actions.png)
 
 | Ação | O que faz |
@@ -23,7 +21,6 @@ Ao iniciar o editor, a tela de boas-vindas apresenta duas opções:
 
 A lateral direita lista as últimas sessões usadas, com data de fechamento e os arquivos de cada uma.
 
-<!-- TODO: capturar screenshot do histórico com pelo menos 2-3 sessões listadas, mostrando data e nome dos arquivos -->
 ![Histórico de sessões recentes](/assets/images/screenshots/v2-session-history.png)
 
 - Clique em qualquer sessão do histórico para restaurá-la diretamente
@@ -57,7 +54,6 @@ Ao restaurar uma sessão, o editor recupera:
 
 A propriedade "Animate Always" nos itens agora é um checkbox editável no painel de animação.
 
-<!-- TODO: capturar screenshot do painel de animação mostrando o checkbox "Animate Always" marcado -->
 ![Checkbox Animate Always no painel de animação](/assets/images/screenshots/v2-animate-always.png)
 
 Marque ou desmarque para controlar se o item anima continuamente no cliente.
@@ -65,6 +61,3 @@ Marque ou desmarque para controlar se o item anima continuamente no cliente.
 ### Play preservado
 
 O botão Play da animação agora permanece ativo ao navegar entre itens que possuem animação. Não é mais necessário clicar Play toda vez que selecionar um novo item.
-
-<!-- TODO: capturar screenshot mostrando o botão Play ativo enquanto navega entre dois itens animados -->
-![Play ativo ao alternar entre itens](/assets/images/screenshots/v2-play-preserved.png)

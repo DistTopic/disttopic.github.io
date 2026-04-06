@@ -2,7 +2,6 @@
 
 Alterna entre lista y cuadrícula compacta de íconos en el panel de ítems, y configura el editor a tu medida.
 
-<!-- TODO: capturar screenshot mostrando el panel de ítems en modo cuadrícula de íconos -->
 ![Panel de ítems en modo cuadrícula de íconos](/assets/images/screenshots/v2-icon-grid-view.png)
 
 ---
@@ -11,22 +10,19 @@ Alterna entre lista y cuadrícula compacta de íconos en el panel de ítems, y c
 
 El botón de alternancia está junto a la barra de búsqueda, en la esquina superior derecha del panel de ítems.
 
-<!-- TODO: capturar screenshot destacando el botón de toggle (ícono de cuadrícula) en la barra de búsqueda -->
 ![Botón de alternancia entre lista y cuadrícula](/assets/images/screenshots/v2-icon-grid-toggle.png)
 
 ### Modo lista
 
 Muestra cada ítem con sprite e ID en una fila — ideal para lectura rápida y navegación secuencial.
 
-<!-- TODO: capturar screenshot del panel de ítems en modo lista tradicional -->
 ![Modo lista con sprite e ID](/assets/images/screenshots/v2-list-view.png)
 
 ### Modo cuadrícula
 
 Muestra solo los sprites en una cuadrícula compacta — ideal para localización visual rápida cuando ya sabes lo que buscas.
 
-<!-- TODO: capturar screenshot del panel de ítems en modo cuadrícula compacta -->
-![Modo cuadrícula compacta de sprites](/assets/images/screenshots/v2-grid-view.png)
+![Modo cuadrícula compacta de sprites](/assets/images/screenshots/v2-icon-grid-view.png)
 
 !!! tip "Consejo"
     Pasa el mouse sobre cualquier ícono en la cuadrícula para ver el ID del ítem en el tooltip.
@@ -37,7 +33,6 @@ Muestra solo los sprites en una cuadrícula compacta — ideal para localizació
 
 Accede a **File → Preferences** para abrir la ventana de configuración del editor.
 
-<!-- TODO: capturar screenshot de la ventana de Preferences abierta -->
 ![Ventana de Preferencias](/assets/images/screenshots/v2-preferences-window.png)
 
 ### Ítems por página
@@ -61,9 +56,6 @@ El cambio se aplica inmediatamente y se mantiene entre sesiones — al reabrir e
 ## Paneles redimensionables
 
 Las tres columnas del editor ahora pueden redimensionarse arrastrando los divisores entre ellas.
-
-<!-- TODO: capturar screenshot mostrando los divisores entre paneles, con cursor de redimensionamiento visible -->
-![Divisores entre paneles redimensionables](/assets/images/screenshots/v2-resizable-panels.png)
 
 | Panel | Posición | Contenido |
 |-------|----------|-----------|
