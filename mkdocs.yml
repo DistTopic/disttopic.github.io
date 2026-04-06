@@ -64,6 +64,11 @@ plugins:
             Itens e OTB: Items & OTB
             Mapas OTBM: OTBM Maps
             Interface: Interface
+            Tutoriais v2: v2 Tutorials
+            Grade de Ícones e Preferências: Icon Grid & Preferences
+            Boas-Vindas e Sessões: Welcome & Sessions
+            Coleções: Collections
+            Ferramentas de Mapa: Map Tools
             Versões Compatíveis: Compatible Versions
             Requisitos de Sistema: System Requirements
             Em Desenvolvimento: Work in Progress
@@ -83,6 +88,11 @@ plugins:
             Itens e OTB: Ítems y OTB
             Mapas OTBM: Mapas OTBM
             Interface: Interfaz
+            Tutoriais v2: Tutoriales v2
+            Grade de Ícones e Preferências: Cuadrícula de Íconos y Preferencias
+            Boas-Vindas e Sessões: Bienvenida y Sesiones
+            Coleções: Colecciones
+            Ferramentas de Mapa: Herramientas de Mapa
             Versões Compatíveis: Versiones Compatibles
             Requisitos de Sistema: Requisitos del Sistema
             Em Desenvolvimento: En Desarrollo
@@ -128,6 +138,11 @@ nav:
               - Itens e OTB: projects/assets-and-map-editor/features-items.md
               - Mapas OTBM: projects/assets-and-map-editor/features-maps.md
               - Interface: projects/assets-and-map-editor/features-interface.md
+          - Tutoriais v2:
+              - Grade de Ícones e Preferências: projects/assets-and-map-editor/icon-grid-preferences.md
+              - Boas-Vindas e Sessões: projects/assets-and-map-editor/welcome-sessions.md
+              - Coleções: projects/assets-and-map-editor/collections.md
+              - Ferramentas de Mapa: projects/assets-and-map-editor/map-tools.md
           - Versões Compatíveis: projects/assets-and-map-editor/formats.md
           - Requisitos de Sistema: projects/assets-and-map-editor/requirements.md
           - Em Desenvolvimento: projects/assets-and-map-editor/wip.md
